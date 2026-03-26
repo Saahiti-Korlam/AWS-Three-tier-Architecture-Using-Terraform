@@ -51,27 +51,22 @@ Data Storage: Stores all the application data in a structured format.
 Multi-AZ Setup: Ensures high availability and fault tolerance by replicating data across multiple availability zones.
 Data Retrieval and Manipulation: Handles queries and transactions from the application tier to manage the data.
 
-Additional Components
-a.Load Balancing
-Purpose: Distributes incoming traffic evenly across multiple instances to prevent any single instance from becoming a bottleneck.
+## Additional Components
 
-Implementation:
-Web Tier: The external load balancer distributes traffic to web servers.\
-Application Tier: The internal load balancer distributes API requests to application servers.
+### Load Balancing
+- Distributes incoming traffic evenly across multiple instances to prevent any single instance from becoming a bottleneck
+- **Web Tier:** External load balancer routes traffic across web server instances
+- **Application Tier:** Internal load balancer distributes API requests across application server instances
 
-Health Checks
-Purpose: Continuously monitors the health of instances to ensure only healthy instances receive traffic.
+### Health Checks
+- Continuously monitors instance health to ensure only healthy instances receive traffic
+- **Web Tier:** External load balancer performs health checks to verify web servers are responsive
+- **Application Tier:** Internal load balancer monitors application servers to confirm they are operational
 
-Implementation:
-Web Tier: Health checks by the external load balancer to ensure web servers are responsive.
-Application Tier: Health checks by the internal load balancer to ensure application servers are operational.
-
-Auto Scaling Groups
-Purpose: Automatically adjusts the number of running instances based on traffic load to maintain performance and cost efficiency.
-
-Implementation:
-Web Tier: Auto-scaling based on metrics like CPU usage or request count to add or remove web server instances.
-Application Tier: Auto-scaling based on similar metrics to adjust the number of application server instances.
+### Auto Scaling Groups
+- Automatically adjusts the number of running instances based on traffic load to maintain performance and cost efficiency
+- **Web Tier:** Scales web server instances in or out based on metrics like CPU usage or request count
+- **Application Tier:** Scales application server instances using similar metrics to match demand
 
 Summary
 This architecture ensures high availability, scalability, and reliability by distributing the load, monitoring instance health, and scaling resources dynamically. The web tier serves the front-end and routes API calls, the application tier handles business logic and interacts with the database, and the database tier provides robust data storage and retrieval.
