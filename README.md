@@ -52,18 +52,23 @@ Multi-AZ Setup: Ensures high availability and fault tolerance by replicating dat
 Data Retrieval and Manipulation: Handles queries and transactions from the application tier to manage the data.
 
 Additional Components
-Load Balancing
+a.Load Balancing
 Purpose: Distributes incoming traffic evenly across multiple instances to prevent any single instance from becoming a bottleneck.
+
 Implementation:
-Web Tier: The external load balancer distributes traffic to web servers.
+Web Tier: The external load balancer distributes traffic to web servers.\
 Application Tier: The internal load balancer distributes API requests to application servers.
+
 Health Checks
 Purpose: Continuously monitors the health of instances to ensure only healthy instances receive traffic.
+
 Implementation:
 Web Tier: Health checks by the external load balancer to ensure web servers are responsive.
 Application Tier: Health checks by the internal load balancer to ensure application servers are operational.
+
 Auto Scaling Groups
 Purpose: Automatically adjusts the number of running instances based on traffic load to maintain performance and cost efficiency.
+
 Implementation:
 Web Tier: Auto-scaling based on metrics like CPU usage or request count to add or remove web server instances.
 Application Tier: Auto-scaling based on similar metrics to adjust the number of application server instances.
